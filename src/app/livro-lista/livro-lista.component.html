@@ -1,0 +1,35 @@
+<main class="container md7 bg-info">
+    <section class="container-imagem"></section> 
+   
+  <table class="table table-striped bg-light">
+ 
+         <thead class="navbar-dark bg-dark text-white">
+       <tr>
+         <th class="fontetitulo">Título</th>
+         <th class="fontetitulo">Resumo</th>
+         <th class="fontetitulo">Editora</th>
+         <th class="fontetitulo">Autores</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let livro of livros">
+         <td>
+          <div>
+            {{ livro.titulo }}
+          </div>
+          <button class="btn btn-danger" (click)="excluir(livro.codigo)">Excluir</button>
+          </td>
+          <td>
+           {{ livro.resumo }}
+          </td>
+         <td>{{ obterNome(livro.codigo) }}</td>
+         <td>
+           <ul>
+             <li *ngFor="let autor of livro.autores">{{ autor }}</li>
+           </ul>
+         </td>
+
+       </tr>
+     </tbody>
+  </table>
+</main>
